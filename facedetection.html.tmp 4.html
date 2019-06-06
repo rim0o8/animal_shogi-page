@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="jquery.facedetection-master/dist/jquery.facedetection.min.js"></script>
+		<script src="get-face.js"></script>
+		<img id="face-image" src="sample.jpg">
+		
+		<style>
+			.border{
+				position: absolute;
+				border: 2px solid ;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			$('#face-image').faceDetection({
+				complete: function (faces) {
+					console.log(faces);
+				}
+			});
+			</script>
+	</body>
+</html>

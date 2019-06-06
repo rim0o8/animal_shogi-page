@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" charset="utf-8">
+
+		<title>どうぶつしょうぎ</title>
+		<link rel="stylesheet" href="AnimalShogi.css">
+		<script src="js/jquery-3.4.1.min.js"></script>
+	</head>
+	<body bgcolor="#b0c4de">
+
+		<div id="topper">
+			<span>どうぶつしょうぎ</span>
+		</div>
+		
+		<div class="hand">
+			<!--構成
+				敵の手駒
+				盤面
+				手駒
+			-->
+
+			<!--2枚持ってる際に重ねるため二重に表示-->
+			<!--
+				piece1: 一枚めの駒
+				backpiece: piece1に隠れている駒
+			-->
+
+			<img src="img/chick_in.gif" alt="chick" class="piece1" id="aiChick1">
+			<img src="img/chick_in.gif" alt="chick" class="backpiece1" id="aiChick2">
+			<img src="img/elephant_in.gif" alt="elephant" class="piece2" id="aiElephant1">
+			<img src="img/elephant_in.gif" alt="elephant" class="backpiece2" id="aiElephant2">
+			<img src="img/giraffe_in.gif" alt="giraffe" class="piece3" id="aiGiraffe1">
+			<img src="img/giraffe_in.gif" alt="giraffe" class="backpiece3" id="aiGiraffe2">
+		</div>
+
+		<div id="field">
+			<!--<img src="img/field.gif">-->
+			<div class="fieldInner">
+				<button type="button" onclick="fieldSuggestAndDecision(1,1)" class="cell" id="cell11"><img src="img/giraffe_in.gif" class="piece" id="piece11"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(2,1)" class="cell" id="cell21"><img src="img/lion_in.gif" class="piece" id="piece21"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(3,1)" class="cell" id="cell31"><img src="img/elephant_in.gif" class="piece" id="piece31"></button>	
+			</div>
+			<div class="fieldInner">
+				<button type="button" onclick="fieldSuggestAndDecision(1,2)" class="cell" id="cell12"><img src="img/none.jpeg" class="piece" id="piece12"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(2,2)" class="cell" id="cell22"><img src="img/chick_in.gif" class="piece" id="piece22"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(3,2)" class="cell" id="cell32"><img src="img/none.jpeg" class="piece" id="piece32"></button>				
+			</div>
+			<div class="fieldInner">
+				<button type="button" onclick="fieldSuggestAndDecision(1,3)" class="cell" id="cell13"><img src="img/none.jpeg" class="piece" id="piece13"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(2,3)" class="cell" id="cell23"><img src="img/chick.gif" class="piece" id="piece23"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(3,3)" class="cell" id="cell33"><img src="img/none.jpeg" class="piece" id="piece33"></button>	
+			</div>
+			<div class="fieldInner">
+				<button type="button" onclick="fieldSuggestAndDecision(1,4)" class="cell" id="cell14"><img src="img/elephant.gif" class="piece" id="piece14"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(2,4)" class="cell" id="cell24"><img src="img/lion.gif" class="piece" id="piece24"></button>
+				<button type="button" onclick="fieldSuggestAndDecision(3,4)" class="cell" id="cell34"><img src="img/giraffe.gif" class="piece" id="piece34"></button>				
+			</div>
+			
+
+		</div>
+
+		<div class="hand">
+			<img src="img/chick.gif" alt="chick" class="backpiece1" id="playerChick1">
+			<button type="button" onclick="handSuggestAndDecision('Chick')" class="piece1" id="playerChick2">
+				<img src="img/chick.gif" width="50" height="50">
+			</button>
+			
+			<img src="img/elephant.gif" alt="elephant" class="backpiece2" id="playerElephant1">
+			<button type="button" onclick="handSuggestAndDecision('Elephant')" src="img/elephant.gif" class="piece2" id="playerElephant2">
+				<img src="img/elephant.gif" width="50" height="50">
+			</button>
+			
+			<img src="img/giraffe.gif" alt="giraffe" class="backpiece3" id="playerGiraffe1">
+			<button type="button" onclick="handSuggestAndDecision('Giraffe')" src="img/giraffe.gif" class="piece3" id="playerGiraffe2">
+				<img src="img/giraffe.gif" width="50" height="50">
+			</button>
+		</div>
+		<div id="aaa"></div>
+
+		<script type="text/javascript" src="debug.js"></script>
+		<script type="text/javascript" src="grobalVar.js"></script>
+		<script type="text/javascript" src="ai2.js"></script>
+		<script type="text/javascript" src="hubs.js"></script>
+		<script type="text/javascript" src="common.js"></script>
+		<script type="text/javascript" src="system.js"></script>
+		<script type="text/javascript" src="forHTML.js"></script>
+	</body>
+</html>

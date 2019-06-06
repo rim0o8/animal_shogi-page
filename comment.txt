@@ -1,0 +1,85 @@
+ai.js{
+	v_turn{
+		true: player
+		false: ai
+		のターン
+	}
+
+	init(){
+		盤面、手持ち、ログ、ターンのリセット
+	}
+	think(field,turn,hand,depth){
+		depth手先までの全パターンを読み、駒得か勝利するパターンの多い方を選ぶどちらもなければランダム
+	}
+	v-move(choice, field, hand){
+		仮装の盤面で手を反映する
+	}
+	move(choice){
+		実際の盤面で手を反映する
+	}
+}
+
+common.js{
+	equals(a,b){
+		配列の比較のための関数。
+		null時にエラー
+	}
+
+	reverse(piece){
+		駒の所有者を変更
+	}
+	isAlly(piece){
+		味方の駒ならtrue
+	}
+	isEnemy(piece){
+		敵の駒ならtrue
+	}
+	getPiece(piece){
+		盤面のpiece
+	}
+	getPiece(piece){}
+
+	move_suggest(x,y){
+		x,yの位置にある駒が移動可能の位置以外の明度を50%にし、suggestedにその位置を渡す。
+	}
+	toDark(){
+		盤面の全ての明度を50%にする
+	}
+	canMove(x,y){
+		x,yが盤面上に存在し、そこに味方の駒がないならば、html上の盤面のx,yの明度を100%に戻し（このメソッドが使用される場合、直前にtoDarkが使用されている）suggest配列に[x,y]をpushする
+	}
+	move(selected, x, y){
+		system_move(choice)とhtml_move(choice)を行う関数
+		suggestedを[]に初期化する
+	}
+	html_move(choice){
+		html上でchoiceの指示通りに駒を動かす。
+		システム上のfield変数に変更は加えない。(system_move(choice)関数が変更を行う。)
+		htmlの見かけ上の関数
+	}
+	summon(piece, x, y){
+		system_summon(choice)とhtml_summon(choice)を行う関数
+	}
+	html_summon(choice){
+		html上でchoiceの指示通りに駒を手駒から出す。
+		システム上のfield変数に変更は加えない。(system_summon(choice)関数が変更を行う。)
+		htmlの見かけ上の関数
+	}
+}
+
+grobalVar.js{
+	selected: move_sugest(x,y),summon_suggest(x,y)の際の元のx,yを一時的に保持す。共通してこの変数を扱う必要がある。（bright解除のため）
+	suggested: suggest(x,y)によって提案された手の配列
+	field: jsで処理する際に用いる盤面情報
+	hand: 手持ちの駒の枚数を駒別に並べたもの(noneはプログラムの整合を取るための意味のない要素)
+		[0]: none, [1]: ひよこ, [2]: ぞう, [3]: キリン, [4]: none, [5]: none, [6]: 敵ひよこ, [7]: 敵ぞう, [8]: 敵キリン
+	log: 指し手のログ
+	turn: 現在のターン（初期値は0)
+}
+
+
+forHTML.js{
+	fieldSuggestAndDecision(x,y){
+
+	}
+}

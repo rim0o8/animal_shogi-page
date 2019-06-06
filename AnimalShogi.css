@@ -1,0 +1,250 @@
+div{
+	margin: 0;
+}
+button{
+	margin: 2px 1px;
+	padding: 0;
+	border-style: solid;
+}
+img{
+	margin: 0;
+	padding: 0;
+}
+
+#topper{
+	position: fixed;
+	background: #00ffff;
+	text-align: center;
+	border: 1px solid #000000;
+}
+.hand{
+	position: relative;
+	width: 420px;
+	height: 70px;
+	background: #3cb371;
+}
+.piece1{
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+
+}
+.piece2{
+	position: absolute;
+	top: 10px;
+	left: 120px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+}
+.piece3{
+	position: absolute;
+	top: 10px;
+	left: 210px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+}
+.backpiece1{
+	position: absolute;
+	top: 10px;
+	left: 40px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+}
+.backpiece2{
+	position: absolute;
+	top: 10px;
+	left: 130px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+}
+.backpiece3{
+	position: absolute;
+	top: 10px;
+	left: 220px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+}
+#aiChick1{
+	opacity: 0;
+}
+#aiChick2{
+	opacity: 0;
+}
+#aiElephant1{
+	opacity: 0;
+}
+#aiElephant2{
+	opacity: 0;
+}
+#aiGiraffe1{
+	opacity: 0;
+}
+#aiGiraffe2{
+	opacity: 0;
+}
+#playerChick1{
+	opacity: 0;
+}
+#playerChick2{
+	opacity: 0;
+}
+#playerElephant1{
+	opacity: 0;
+}
+#playerElephant2{
+	opacity: 0;
+}
+#playerGiraffe1{
+	opacity: 0;
+}
+#playerGiraffe2{
+	opacity: 0;
+}
+#field{
+	position: relative;
+	left: 50px;
+	width: 315px;
+	background: #ff7f50;
+}
+.fieldInner{
+	position: relative;
+}
+.cell{
+	width: 100px;
+	height: 100px;
+	border: 2px, dotted #ff7f50
+}
+
+#cell11{
+	background: #87cefa;
+	position: relative;
+	/*top: 115px;
+	left: 42px;
+	*/
+}
+#cell21{
+	background: #87cefa;
+	position: relative;
+	/*top: 115px;
+	left: 162px;
+	*/
+}
+#cell31{
+	background: #87cefa;
+	position: relative;
+	/*top: 115px;
+	left: 282px;
+	*/
+}
+#cell12{
+	background: #fff8dc;
+	position: relative;
+	/*top: 235px;
+	left: 42px;
+	*/
+}
+#cell22{
+	background: #fff8dc;
+	position: relative;
+	/*top: 235px;
+	left: 162px;
+	*/
+}
+#cell32{
+	background: #fff8dc;
+	position: relative;
+	/*
+	top: 235px;
+	left: 282px;
+	*/
+}
+#cell13{
+	background: #fff8dc;
+	position: relative;
+	/*
+	top: 355px;
+	left: 42px;
+	*/
+}
+#cell23{
+	background: #fff8dc;
+	position: relative;
+	/*
+	top: 355px;
+	left: 162px;
+	*/
+}
+#cell33{
+	background: #fff8dc;
+	position: relative;
+	/*
+	top: 355px;
+	left: 282px;
+	*/
+}
+#cell14{
+	background: #87cefa;
+	position: relative;
+	/*
+	top: 475px;
+	left: 42px;
+	*/
+}
+#cell24{
+	background: #87cefa;
+	position: relative;
+	/*
+	top: 475px;
+	left: 162px;
+	*/
+}
+#cell34{
+	background: #87cefa;
+	position: relative;
+	/*
+	top: 475px;
+	left: 282px;
+	*/
+}
+.piece{
+	display: inline-block;
+	margin: 2px;
+	width: 80px;
+	height: 80px;
+}
+#piece11{
+}
+#piece21{
+}
+#piece31{
+}
+#piece12{
+	opacity: 0;
+}
+#piece22{
+}
+#piece32{
+	opacity: 0;
+}
+#piece13{
+	opacity: 0;
+}
+#piece23{
+}
+#piece33{
+	opacity: 0;
+}
+#piece14{
+}
+#piece24{
+}
+#piece34{
+}
