@@ -149,10 +149,10 @@ function getRandom(size){
 }
 
 function player_win(){
-	put('you win!')
+	alert('You Win!!')	
 }
 function player_lose(){
-	put('i win!')
+	console.log('i win!')
 }
 
 
