@@ -5,5 +5,3 @@ function init(){
 function hey(){
 	console.log(this.message)
 }
-
-hey()

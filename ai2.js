@@ -27,26 +27,18 @@ function ai_html_move(choice){
 	opacity("piece"+String(choice[1])+String(choice[0]),0)
 }
 function ai_system_move(choice){
-	put('~')
-	put(choice)
 	if (field[choice[2]][choice[3]] != 0){
 		getPiece(field[choice[2]][choice[3]])
 	}
-	put(field[choice[2]][choice[3]])
-	put(field[choice[0]][choice[1]])
 	field[choice[2]][choice[3]] = field[choice[0]][choice[1]]
 	field[choice[0]][choice[1]] = 0
 }
 function ai_html_summon(choice){
 	change_src('piece'+String(choice[1])+String(choice[2]), src[choice[0]])
 	if (hand[choice[0]] == 2){
-		put('!')
-		put(playerORai(num2piece(choice[0]))+num2piece(choice[0])+'2')
 		opacity(playerORai(num2piece(choice[0]))+num2piece(choice[0])+'2', 0)
 	}
 	else if (hand[choice[0]] == 1){
-		put('?')
-		put(playerORai(choice[0])+num2piece(choice[0])+'2')
 		opacity(playerORai(choice[0])+num2piece(choice[0])+'1', 0)
 	}
 	opacity('piece'+String(choice[1])+String(choice[2]), 1)
@@ -54,8 +46,6 @@ function ai_html_summon(choice){
 }
 function ai_system_summon(choice){
 	hand[choice[0]]--
-	put('summon')
-	put(choice)
 	field[choice[2]][choice[1]] = choice[0]
 	return
 }
@@ -250,10 +240,6 @@ function get_not_lose(commands, v_field, v_hand){
 	for (var i=0;i<commandS.length;i++){
 		var tmp = predict(commandS[i],v_fielD,v_hanD)
 		commands2 = player_check(tmp[0],tmp[1])
-		put(commandS[i])
-		put(tmp[0])
-		put('com')
-		put(commands2)
 		if (player_get_win(commands2, tmp[0], tmp[1]) == 0) ret.push(commandS[i])
 	}
 	return ret
@@ -288,8 +274,6 @@ function func2(func){
 */
 
 function ai_think(v_field,v_hand){
-	put('field')
-	put(field)
 	var point = 0
 	var biggest_points = []	//biggest
 	commands = ai_check(v_field,v_hand)
@@ -297,19 +281,12 @@ function ai_think(v_field,v_hand){
 		win_ai_order(ai_get_win(commands,v_field,v_hand))
 		player_lose()
 	}
-	put('get_not_lose')
-	put(v_field)
-	put(commands)
 	commands = get_not_lose(commands,v_field,v_hand)
-	put('!?')
-	put(commands)
 	biggest_commands = clone_2dim(commands)
 	if (commands == []) player_win()
 	for (var j=0;j<commands.length;j++){
 		if (isGet(commands[j],v_field)){
 			point = 1
-			// put('commands[j]')
-			// put(commands[j])
 		} 
 		else point = 0
 		tmp = predict(commands[j],v_field,v_hand)
@@ -320,17 +297,11 @@ function ai_think(v_field,v_hand){
 		for (var k=0;k<commands2.length;k++){
 			if (isGet(commands2[k],tmp[0])) {
 				point2 = point - 1
-				//put('commands2[k]')
-				//put(commands2[k])
 			}
 			else{
 				point2 = point
 			}
-			// put('com')
-			// put(commands2[k])
-			// put(tmp[0])
 			tmp2 = predict(commands2[k],tmp[0],tmp[1])
-			//put(tmp2[0])
 			// v_field = tmp[0]
 			// v_hand = tmp[1]
 			commands3 = ai_check(tmp2[0],tmp2[1])
@@ -341,10 +312,6 @@ function ai_think(v_field,v_hand){
 			for (var l=0;l<commands3.length;l++){
 				if (isGet(commands3[l],tmp2[0])) /*if(no_damage_atack(commands3[l],tmp2[0]))*/ {
 					points.push(point2 + 1)
-					// put('v_field')
-					// put(tmp2[0])
-					// put('commands3[l]')
-					// put(commands3[l])
 				}
 				else points.push(point2)
 			}
@@ -352,9 +319,6 @@ function ai_think(v_field,v_hand){
 		}
 		biggest_points.push(min(big_points))
 	}
-	put('???')
-	put(biggest_points)
-	put(biggest_commands)
 	if (biggest_commands.length < 1) return []
 	return biggest_commands[max_index(biggest_points)]
 	//var best_index = 0

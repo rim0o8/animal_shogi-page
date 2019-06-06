@@ -8,7 +8,6 @@ function order_hub(order,selecteD,x,y){	//turnとlogの処理とaiのorder受付
 		summon(selecteD,x,y)
 	}
 	ai_order()
-	put('<-------------turnend-------------->')
 }
 function suggest_hub(list){
 	if (list.length==1){

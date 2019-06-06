@@ -35,4 +35,3 @@ var src=[
 	['img/lion_in.gif'],
 	['img/chicken_in.gif']
 ]
-var depth = 0
